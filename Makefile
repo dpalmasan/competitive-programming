@@ -6,3 +6,6 @@ subsets: subsets.cpp
 
 permutations: permutations.cpp
 	$(CC) $(CFLAGS) permutations.cpp -o permutations
+
+max_subarray_sum: max_subarray_sum.cpp
+	$(CC) $(CFLAGS) max_subarray_sum.cpp -o max_subarray_sum
