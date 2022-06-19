@@ -7,5 +7,5 @@ subsets: subsets.cpp
 permutations: permutations.cpp
 	$(CC) $(CFLAGS) permutations.cpp -o permutations
 
-max_subarray_sum: max_subarray_sum.cpp
-	$(CC) $(CFLAGS) max_subarray_sum.cpp -o max_subarray_sum
+max_subarray_sum: max_subarray_sum.o max_subarray_sum_tests.cpp
+	$(CC) $(CFLAGS) max_subarray_sum_tests.cpp -o tests max_subarray_sum.o
