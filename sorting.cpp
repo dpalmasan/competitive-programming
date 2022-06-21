@@ -51,3 +51,18 @@ void __sort(int* arr, const std::size_t& a, const std::size_t& b) {
 void merge_sort(int* arr, const std::size_t& n) {
     __sort(arr, 0, n - 1);
 }
+
+void count_sort(int* arr, const std::size_t& n, int c) {
+    auto table = new int[c + 1];
+
+    for (auto i = 0; i < n; ++i) {
+        table[arr[i]] += 1;
+    }
+
+    for (auto i = 0, j = 0; i < c; ++i) {
+        while (table[i] > 0) {
+            arr[j++] = i;
+            table[i]--;
+        }
+    }
+}

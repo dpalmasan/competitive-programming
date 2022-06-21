@@ -43,3 +43,9 @@ TEST_CASE("Test merge sort") {
         CHECK(is_sorted(arr, 8));
     }
 }
+
+TEST_CASE("Test count sort") {
+    int arr[10] = {25, 15, 8, 10, 6, 3, 0, 30, 15, 15};
+    count_sort(arr, 10, 1000);
+    CHECK(is_sorted(arr, 10));
+}
