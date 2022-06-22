@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <iostream>
 
 void bubble_sort(int* arr, const std::size_t& n) {
     for (std::size_t i = 0; i < n; ++i) {
