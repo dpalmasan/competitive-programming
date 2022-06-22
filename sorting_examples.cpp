@@ -30,3 +30,16 @@ int maximum_customers(std::vector<std::pair<int, int>>& times) {
     }
     return max_count;
 }
+
+std::vector<std::pair<int, int>> schedule_events(std::vector<std::pair<int, int>>& events) {
+    std::vector<std::pair<int, int>> out;
+    std::sort(events.begin(), events.end(), [](std::pair<int, int>& a, std::pair<int, int>& b) { return a.second < b.second; });
+    int curr_end_time = 0;
+    for (auto event : events) {
+        if (event.first >= curr_end_time) {
+            out.push_back(event);
+            curr_end_time = event.second;
+        }
+    }
+    return out;
+}
