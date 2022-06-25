@@ -17,3 +17,23 @@ TEST_CASE("Test coin problem") {
         CHECK(coin_problem(coins, sum) == 2);
     }
 }
+
+TEST_CASE("Test coin problem, count solutions") {
+    SUBCASE("Negative sum") {
+        std::vector<int> coins = {1, 2, 5};
+        int sum = -3;
+        CHECK(coin_problem_count_solutions(coins, sum) == 0);
+    }
+
+    SUBCASE("Empty set (sum = 0)") {
+        std::vector<int> coins = {1, 3, 4};
+        int sum = 0;
+        CHECK(coin_problem_count_solutions(coins, sum) == 1);
+    }
+
+    SUBCASE("DP Solution") {
+        std::vector<int> coins = {1, 3, 4};
+        int sum = 5;
+        CHECK(coin_problem_count_solutions(coins, sum) == 6);
+    }
+}
