@@ -14,5 +14,8 @@ max_subarray_sum: max_subarray_sum.o max_subarray_sum_tests.cpp
 sorting: sorting.o sorting.cpp
 	$(CC) $(CFLAGS) sorting_tests.cpp -o $(TESTS) sorting.o
 
-sorting_examples: sorting_examples.o sorting_examples.cpp
+sorting_examples: sorting_examples.o sorting_examples_tests.cpp
 	$(CC) $(CFLAGS) sorting_examples_tests.cpp -o $(TESTS) sorting_examples.o
+
+dp_examples: dp_examples.o dp_examples_tests.cpp
+	$(CC) $(CFLAGS) dp_examples_tests.cpp -o $(TESTS) dp_examples.o
