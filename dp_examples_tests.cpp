@@ -4,7 +4,7 @@
 #include "dp_examples.h"
 
 
-TEST_CASE("Test scheduling events") {
+TEST_CASE("Test coin problem") {
     SUBCASE("Greedy works") {
         std::vector<int> coins = {1, 2, 5};
         int sum = 12;
