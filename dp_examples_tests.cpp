@@ -37,3 +37,8 @@ TEST_CASE("Test coin problem, count solutions") {
         CHECK(coin_problem_count_solutions(coins, sum) == 6);
     }
 }
+
+TEST_CASE("Longest increasing subsequence") {
+    std::vector<int> arr = {6, 2, 5, 1, 7, 4, 8, 3};
+    CHECK(longest_inc_sub(arr) == 4);
+}
