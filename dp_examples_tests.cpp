@@ -42,3 +42,42 @@ TEST_CASE("Longest increasing subsequence") {
     std::vector<int> arr = {6, 2, 5, 1, 7, 4, 8, 3};
     CHECK(longest_inc_sub(arr) == 4);
 }
+
+TEST_CASE("Max path sum") {
+    SUBCASE("Book example") {
+        int arr[5][5] = {
+            {3, 7, 9, 2, 7},
+            {9, 8, 3, 5, 5},
+            {1, 7, 9, 8, 5},
+            {3, 8, 6, 4, 10},
+            {6, 3, 9, 7, 8}
+        };
+        int **test = new int*[5];
+        for (auto i = 0; i < 5; ++i) {
+            test[i] = new int[5];
+            for (auto j = 0; j < 5; ++j) {
+                test[i][j] = arr[i][j];
+            }
+        }
+        CHECK(max_path_sum(test, 5, 5) == 67);
+    }
+
+    SUBCASE("Extreme value example example") {
+        int arr[5][5] = {
+            {3, 7, 9, 2, 7},
+            {9, 8, 3, 5, 5},
+            {1, 7, 9, 8, 5},
+            {3, 8, 6, 4, 10},
+            {1000, 3, 9, 7, 8}
+        };
+        int **test = new int*[5];
+        for (auto i = 0; i < 5; ++i) {
+            test[i] = new int[5];
+            for (auto j = 0; j < 5; ++j) {
+                test[i][j] = arr[i][j];
+            }
+        }
+        CHECK(max_path_sum(test, 5, 5) == 1043);
+    }
+
+}
