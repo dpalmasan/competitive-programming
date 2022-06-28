@@ -65,3 +65,14 @@ int longest_inc_sub(const std::vector<int>& arr) {
     }
     return best;
 }
+
+int max_path_sum(int **arr, const int& m, const int& n) {
+    int **sum = new int*[m];
+    for (auto i = 0; i < m; ++i) {
+        sum[i] = new int[n];
+        for (auto j = 0; j < n; ++j) {
+            sum[i][j] = std::max((j <= 0) ? 0 : sum[i][j - 1], (i <= 0) ? 0: sum[i - 1][j]) + arr[i][j];
+        }
+    }
+    return sum[m - 1][n - 1];
+}
