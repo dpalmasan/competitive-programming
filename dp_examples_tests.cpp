@@ -79,5 +79,9 @@ TEST_CASE("Max path sum") {
         }
         CHECK(max_path_sum(test, 5, 5) == 1043);
     }
+}
 
+TEST_CASE("Knapsack") {
+    std::vector<int> arr = {1, 3, 3, 5};
+    CHECK(knapsack(arr, 12) == 11);
 }
