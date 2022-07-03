@@ -76,3 +76,21 @@ int max_path_sum(int **arr, const int& m, const int& n) {
     }
     return sum[m - 1][n - 1];
 }
+
+int knapsack(std::vector<int>& weights, const int& sum) {
+    bool *possible = new bool[sum + 1];
+    possible[0] = true;
+    int count = 0;
+    for (auto k = 0; k < weights.size(); ++k) {
+        for (auto x = sum - weights[k]; x >=0; --x) {
+            possible[x + weights[k]] |= possible[x];
+        }
+    }
+
+    for (auto x = 0; x <= sum; ++x) {
+        if (possible[x]) {
+            count += 1;
+        }
+    }
+    return count;
+}
